@@ -3,12 +3,14 @@ import Main from './components/Main.vue'
 import Header from './components/Header.vue';
 import { store } from './components/data/store';
 import axios from 'axios';
+import Searchbar from './components/partials/Searchbar.vue'
 
 
 export default {
   components:{
     Main,
     Header,
+    Searchbar
 
   },
   data(){
@@ -23,7 +25,9 @@ export default {
         params:this.store.params
       })
       .then(res =>{
-        console.log(res.data)
+        
+        this.store.movieList=res.data.results
+        console.log(this.store.movieList)
       })
     }
   },
@@ -38,11 +42,12 @@ export default {
 <template>
   <div>
     <Header />
+    <Searchbar @startSearch="getApi"/>
     <Main /></div>
 
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 @use './assets/scss/main.scss'
 
 </style>

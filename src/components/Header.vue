@@ -10,7 +10,9 @@ export default {
 </script>
 
 <template>
-  <div>header</div>
+  <header class="container text-center ">
+  <h1>BOOLFILX</h1>
+  </header>
 
 </template>
 
