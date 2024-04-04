@@ -26,6 +26,13 @@ export default {
         :originalLanguage="card.original_language"
         :voteAverage="card.vote_average"
         />
+        <div> serie tv</div>
+        <Card v-for=" card in store.seriesList" :key="card.id"
+        :title="card.name"
+        :originalTitle="card.original_name"
+        :originalLanguage="card.original_language"
+        :voteAverage="card.vote_average"
+        />
      
     </div>
  </div>

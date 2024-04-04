@@ -25,11 +25,23 @@ export default {
         params:this.store.params
       })
       .then(res =>{
-        
+       
         this.store.movieList=res.data.results
+      
         console.log(this.store.movieList)
       })
+      axios.get(this.store.apiUrlseries, {
+        params:this.store.params
+      })
+      .then(res =>{
+       
+        this.store.seriesList=res.data.results
+      
+        console.log(this.store.seriesList)
+      })
+    
     }
+
   },
   mounted(){
     this.getApi()
@@ -42,7 +54,7 @@ export default {
 <template>
   <div>
     <Header />
-    <Searchbar @startSearch="getApi"/>
+    <Searchbar @startSearch="getApi " />
     <Main /></div>
 
 </template>
