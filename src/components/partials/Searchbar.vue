@@ -18,14 +18,31 @@ export default {
 </script>
 
 <template>
-  <div class="container mb-3 text-center ">
+  <div class=" searchbar ">
   
   <input @keyup.enter="startSeach" type="text" v-model="store.params.query">
-  <button @click="startSeach">cerca </button>
+  <button @click="startSeach">Cerca </button>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.searchbar{
+
+  position: absolute;
+  top:20px;
+  right: 20px;
+  input{
+   
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  button{
+   
+    font-weight:700;
+    
+    
+  }
+}
 
 
 </style>

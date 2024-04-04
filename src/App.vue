@@ -27,8 +27,19 @@ export default {
       .then(res =>{
        
         this.store.movieList=res.data.results
-      
+       
         console.log(this.store.movieList)
+
+        store.movieList.forEach(item=>{
+          console.log(item.vote_average)
+         
+            store.vote.push(item.vote_average)
+            console.log(store.vote)
+
+        
+        })
+        
+        
       })
       axios.get(this.store.apiUrlseries, {
         params:this.store.params
@@ -40,11 +51,14 @@ export default {
         console.log(this.store.seriesList)
       })
     
-    }
+    },
+    
+    
 
   },
   mounted(){
     this.getApi()
+    
   }
 
 }
@@ -53,13 +67,16 @@ export default {
 
 <template>
   <div>
+    <header>
     <Header />
     <Searchbar @startSearch="getApi " />
-    <Main /></div>
-
+  </header>
+    <Main />
+</div>
 </template>
 
 <style lang="scss" >
 @use './assets/scss/main.scss'
+
 
 </style>
