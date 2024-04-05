@@ -17,14 +17,26 @@ export default {
 
   },
   methods:{
-   
+    fullStar(){
+     
+      return Math.round(this.voteAverage/2) 
+    },
+    emptyStar(){
+      return Math.round(5- this.voteAverage/2 )
+
+    }
+  }  
+
     
+   
+ ,
+  mounted(){
+
   
     
-   
-  },
-  mounted(){
     
+
+   
     
   }
 }
@@ -44,8 +56,10 @@ export default {
       
     
       <div v-else>{{ originalLanguage }}</div>
-      <div >{{ voteAverage }}</div>
-      
+      <div>
+      <i v-for="(star,index) in fullStar()" :key="index" class="fa-solid fa-star"></i>
+      <i v-for="(empty,index) in emptyStar()" :key="index" class="fa-regular fa-star"></i>
+      </div>
     </div>  
   
     <div class="img-container">

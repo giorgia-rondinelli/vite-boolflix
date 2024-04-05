@@ -32,12 +32,12 @@ export default {
   top:20px;
   right: 20px;
   input{
-   
+   border: none;
     border-radius: 20px;
     margin-right: 10px;
   }
   button{
-   
+   border: none;
     font-weight:700;
     
     
