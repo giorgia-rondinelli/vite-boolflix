@@ -44,7 +44,7 @@ export default {
 
 <template>
   
-  <div class=" card-sc col position-relative m-1 ">
+  <div class=" card-sc col position-relative mb-2 ">
     <div class="movie position-absolute text-center text-white ">
     
       <div>{{ title }}</div>
@@ -70,11 +70,26 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.card-sc{
+ 
+}
+@keyframes slide{
+  0%   {  top:100px;}
+  
+  100% {  top:0px;}
+}
+
 .movie{
   background-color: rgba(81, 74, 74, 0.717);
-  width: 342px;
+  width: 300px;
   height: 100%;
   display: none;
+  animation-name: slide;
+  animation-duration: 0.7s;
+  border-radius: 20px;
+ 
+  
   
  
  
@@ -93,6 +108,9 @@ export default {
 }
 .card-sc:hover .movie{
   display: block;
+
+
+
 }
 
 
@@ -100,8 +118,11 @@ export default {
   width: 300px;
   img{
     object-fit: cover;
-    max-width: 342px;
+    width: 300px;
+    border-radius: 20px;
+    height: 400px;
   }
+  
 }
 
 

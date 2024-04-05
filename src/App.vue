@@ -68,17 +68,30 @@ export default {
 </script>
 
 <template>
-  <div>
-    <header>
-    <Header />
-    <Searchbar @startSearch="getApi " />
-  </header>
-    <Main />
-</div>
+  <body>
+    
+  
+    <div class="cont-main">
+      <header>
+      <Header />
+      <Searchbar @startSearch="getApi " />
+    </header>
+      <Main />
+  </div>
+</body>
 </template>
 
 <style lang="scss" >
-@use './assets/scss/main.scss'
+@use './assets/scss/main.scss';
+
+body{
+
+}
+.cont-main{
+height: 100%;
+background: linear-gradient(#da3e3e 0%, #9198e5 100%);
+
+}
 
 
 </style>
